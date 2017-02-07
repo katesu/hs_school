@@ -1,0 +1,70 @@
+/* $module
+
+	##     ##  #######  ########  ##     ## ##       ########
+	###   ### ##     ## ##     ## ##     ## ##       ##
+	#### #### ##     ## ##     ## ##     ## ##       ##
+	## ### ## ##     ## ##     ## ##     ## ##       ######
+	##     ## ##     ## ##     ## ##     ## ##       ##
+	##     ## ##     ## ##     ## ##     ## ##       ##
+	##     ##  #######  ########   #######  ######## ########
+
+	*/
+
+/* $pure-form
+
+	                                   ###
+	                                   # #
+	                                   #
+	 #####  ##  ##  ####  ###         ###   ####  #### ########
+	  #   #  #   #   # # #   #         #   ##  ##  # #  #  #  #
+	  #   #  #   #   #   ##### ######  #   #    #  #    #  #  #
+	  #   #  #   #   #   #             #   ##  ##  #    #  #  #
+	  ####   ###### ###   ####        ###   ####  ###  #########
+	  #
+	 ###
+
+	*/
+
+@import 'forms'
+
+
+
+/* $button
+
+	##              #   #
+	 #              #   #
+	 #              #   #
+	 ####  ##  ##  ### ###  ####  ######
+	 #   #  #   #   #   #  ##  ##  #   #
+	 #   #  #   #   #   #  #    #  #   #
+	 #   #  #   #   #   #  ##  ##  #   #
+	 ####   ######  ##  ##  ####  ### ###
+
+	*/
+
+.btn-box
+	text-align: center
+
+.btn
+	display: inline-block
+	height: 32px
+	line-height: 32px
+	font-size: 14px
+	border-radius: 3px
+	transition: all .3s
+	@include ipadDown
+		height: 44px
+		line-height: 44px
+		font-size: 17px
+
+.btn-reset, .btn-register
+	background-color: rgba(0, 0, 0, 0.35)
+	&:hover, &:active
+		background-color: rgba(0, 0, 0, 0.5)
+
+.btn-submit
+	background-color: $mainColor
+	&:hover, &:active
+		background-color: darken($mainColor, 20%)
+.btn-fluid
+	display: block

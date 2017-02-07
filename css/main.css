@@ -1,0 +1,1165 @@
+@charset "UTF-8";
+/* $reset
+
+  ########  ########  ######  ######## ########
+  ##     ## ##       ##    ## ##          ##
+  ##     ## ##       ##       ##          ##
+  ########  ######    ######  ######      ##
+  ##   ##   ##             ## ##          ##
+  ##    ##  ##       ##    ## ##          ##
+  ##     ## ########  ######  ########    ##
+
+  */
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain)
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* $defaul element
+
+  ########  ######## ########    ###    ##     ## ##       ########
+  ##     ## ##       ##         ## ##   ##     ## ##          ##
+  ##     ## ##       ##        ##   ##  ##     ## ##          ##
+  ##     ## ######   ######   ##     ## ##     ## ##          ##
+  ##     ## ##       ##       ######### ##     ## ##          ##
+  ##     ## ##       ##       ##     ## ##     ## ##          ##
+  ########  ######## ##       ##     ##  #######  ########    ##
+
+  ######## ##       ######## ##     ## ######## ##    ## ########
+  ##       ##       ##       ###   ### ##       ###   ##    ##
+  ##       ##       ##       #### #### ##       ####  ##    ##
+  ######   ##       ######   ## ### ## ######   ## ## ##    ##
+  ##       ##       ##       ##     ## ##       ##  ####    ##
+  ##       ##       ##       ##     ## ##       ##   ###    ##
+  ######## ######## ######## ##     ## ######## ##    ##    ##
+
+  */
+* {
+  box-sizing: border-box;
+}
+
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 93.75%;
+  font-family: "Helvetica Neue", Helvetica, "segoe ui", "microsoft jhenghei", "microsoft mhei", stheititc, sans-serif;
+  line-height: 1.5;
+  color: #373a3c;
+  background-color: #fff;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+
+h1, .h1 {
+  font-size: 2rem;
+}
+
+h2, .h2 {
+  font-size: 1.5rem;
+}
+
+h3, .h3 {
+  font-size: 1.125rem;
+}
+
+h4, .h4 {
+  font-size: 1rem;
+}
+
+h5, .h5 {
+  font-size: 0.75rem;
+}
+
+h6, .h6 {
+  font-size: 0.625rem;
+}
+
+p {
+  font-size: 0.9375rem;
+}
+
+/* $module
+
+	##     ##  #######  ########  ##     ## ##       ########
+	###   ### ##     ## ##     ## ##     ## ##       ##
+	#### #### ##     ## ##     ## ##     ## ##       ##
+	## ### ## ##     ## ##     ## ##     ## ##       ######
+	##     ## ##     ## ##     ## ##     ## ##       ##
+	##     ## ##     ## ##     ## ##     ## ##       ##
+	##     ##  #######  ########   #######  ######## ########
+
+	*/
+/* $pure-form
+
+	                                   ###
+	                                   # #
+	                                   #
+	 #####  ##  ##  ####  ###         ###   ####  #### ########
+	  #   #  #   #   # # #   #         #   ##  ##  # #  #  #  #
+	  #   #  #   #   #   ##### ######  #   #    #  #    #  #  #
+	  #   #  #   #   #   #             #   ##  ##  #    #  #  #
+	  ####   ###### ###   ####        ###   ####  ###  #########
+	  #
+	 ###
+
+	*/
+/*!
+Pure v0.6.1
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+/*csslint box-model:false*/
+/*
+Box-model set to false because we're setting a height on select elements, which
+also have border and padding. This is done because some browsers don't render
+the padding. We explicitly set the box-model for select elements to border-box,
+so we can ignore the csslint warning.
+*/
+.p-form input[type="text"],
+.p-form input[type="password"],
+.p-form input[type="email"],
+.p-form input[type="url"],
+.p-form input[type="date"],
+.p-form input[type="month"],
+.p-form input[type="time"],
+.p-form input[type="datetime"],
+.p-form input[type="datetime-local"],
+.p-form input[type="week"],
+.p-form input[type="number"],
+.p-form input[type="search"],
+.p-form input[type="tel"],
+.p-form input[type="color"],
+.p-form select,
+.p-form textarea {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.p-form input:not([type]) {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+/* May be able to remove this tweak as color inputs become more standardized across browsers. */
+.p-form input[type="color"] {
+  padding: 0.2em 0.5em;
+}
+
+.p-form input[type="text"]:focus,
+.p-form input[type="password"]:focus,
+.p-form input[type="email"]:focus,
+.p-form input[type="url"]:focus,
+.p-form input[type="date"]:focus,
+.p-form input[type="month"]:focus,
+.p-form input[type="time"]:focus,
+.p-form input[type="datetime"]:focus,
+.p-form input[type="datetime-local"]:focus,
+.p-form input[type="week"]:focus,
+.p-form input[type="number"]:focus,
+.p-form input[type="search"]:focus,
+.p-form input[type="tel"]:focus,
+.p-form input[type="color"]:focus,
+.p-form select:focus,
+.p-form textarea:focus {
+  outline: 0;
+  border-color: #129FEA;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.p-form input:not([type]):focus {
+  outline: 0;
+  border-color: #129FEA;
+}
+
+.p-form input[type="file"]:focus,
+.p-form input[type="radio"]:focus,
+.p-form input[type="checkbox"]:focus {
+  outline: thin solid #129FEA;
+  outline: 1px auto #129FEA;
+}
+
+.p-form .pure-checkbox,
+.p-form .pure-radio {
+  margin: 0.5em 0;
+  display: block;
+}
+
+.p-form input[type="text"][disabled],
+.p-form input[type="password"][disabled],
+.p-form input[type="email"][disabled],
+.p-form input[type="url"][disabled],
+.p-form input[type="date"][disabled],
+.p-form input[type="month"][disabled],
+.p-form input[type="time"][disabled],
+.p-form input[type="datetime"][disabled],
+.p-form input[type="datetime-local"][disabled],
+.p-form input[type="week"][disabled],
+.p-form input[type="number"][disabled],
+.p-form input[type="search"][disabled],
+.p-form input[type="tel"][disabled],
+.p-form input[type="color"][disabled],
+.p-form select[disabled],
+.p-form textarea[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.p-form input:not([type])[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+.p-form input[readonly],
+.p-form select[readonly],
+.p-form textarea[readonly] {
+  background-color: #eee;
+  /* menu hover bg color */
+  color: #777;
+  /* menu text color */
+  border-color: #ccc;
+}
+
+.p-form input:focus:invalid,
+.p-form textarea:focus:invalid,
+.p-form select:focus:invalid {
+  color: #b94a48;
+  border-color: #e9322d;
+}
+
+.p-form input[type="file"]:focus:invalid:focus,
+.p-form input[type="radio"]:focus:invalid:focus,
+.p-form input[type="checkbox"]:focus:invalid:focus {
+  outline-color: #e9322d;
+}
+
+.p-form select {
+  /* Normalizes the height; padding is not sufficient. */
+  height: 2.25em;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.p-form select[multiple] {
+  height: auto;
+}
+
+.p-form label {
+  margin: 0.5em 0 0.2em;
+}
+
+.p-form fieldset {
+  margin: 0;
+  padding: 0.35em 0 0.75em;
+  border: 0;
+}
+
+.p-form legend {
+  display: block;
+  width: 100%;
+  padding: 0.3em 0;
+  margin-bottom: 0.3em;
+  color: #333;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.p-form-stacked input[type="text"],
+.p-form-stacked input[type="password"],
+.p-form-stacked input[type="email"],
+.p-form-stacked input[type="url"],
+.p-form-stacked input[type="date"],
+.p-form-stacked input[type="month"],
+.p-form-stacked input[type="time"],
+.p-form-stacked input[type="datetime"],
+.p-form-stacked input[type="datetime-local"],
+.p-form-stacked input[type="week"],
+.p-form-stacked input[type="number"],
+.p-form-stacked input[type="search"],
+.p-form-stacked input[type="tel"],
+.p-form-stacked input[type="color"],
+.p-form-stacked input[type="file"],
+.p-form-stacked select,
+.p-form-stacked label,
+.p-form-stacked textarea {
+  display: block;
+  margin: 0.25em 0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.p-form-stacked input:not([type]) {
+  display: block;
+  margin: 0.25em 0;
+}
+
+.p-form-aligned input,
+.p-form-aligned textarea,
+.p-form-aligned select,
+.p-form-aligned .pure-help-inline,
+.p-form-message-inline {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+
+.p-form-aligned textarea {
+  vertical-align: top;
+}
+
+/* Aligned Forms */
+.p-form-aligned .pure-control-group {
+  margin-bottom: 0.5em;
+}
+
+.p-form-aligned .pure-control-group label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10em;
+  margin: 0 1em 0 0;
+}
+
+.p-form-aligned .pure-controls {
+  margin: 1.5em 0 0 11em;
+}
+
+/* Rounded Inputs */
+.p-form input.pure-input-rounded,
+.p-form .pure-input-rounded {
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+.p-form .pure-group fieldset {
+  margin-bottom: 10px;
+}
+
+.p-form .pure-group input,
+.p-form .pure-group textarea {
+  display: block;
+  padding: 10px;
+  margin: 0 0 -1px;
+  border-radius: 0;
+  position: relative;
+  top: -1px;
+}
+
+.p-form .pure-group input:focus,
+.p-form .pure-group textarea:focus {
+  z-index: 3;
+}
+
+.p-form .pure-group input:first-child,
+.p-form .pure-group textarea:first-child {
+  top: 1px;
+  border-radius: 4px 4px 0 0;
+  margin: 0;
+}
+
+.p-form .pure-group input:first-child:last-child,
+.p-form .pure-group textarea:first-child:last-child {
+  top: 1px;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.p-form .pure-group input:last-child,
+.p-form .pure-group textarea:last-child {
+  top: -2px;
+  border-radius: 0 0 4px 4px;
+  margin: 0;
+}
+
+.p-form .pure-group button {
+  margin: 0.35em 0;
+}
+
+.p-form .pure-input-1 {
+  width: 100%;
+}
+
+.p-form .pure-input-3-4 {
+  width: 75%;
+}
+
+.p-form .pure-input-2-3 {
+  width: 66%;
+}
+
+.p-form .pure-input-1-2 {
+  width: 50%;
+}
+
+.p-form .pure-input-1-3 {
+  width: 33%;
+}
+
+.p-form .pure-input-1-4 {
+  width: 25%;
+}
+
+/* Inline help for forms */
+/* NOTE: pure-help-inline is deprecated. Use .p-form-message-inline instead. */
+.p-form .pure-help-inline,
+.p-form-message-inline {
+  display: inline-block;
+  padding-left: 0.3em;
+  color: #666;
+  vertical-align: middle;
+  font-size: 0.875em;
+}
+
+/* Block help for forms */
+.p-form-message {
+  display: block;
+  color: #666;
+  font-size: 0.875em;
+}
+
+@media only screen and (max-width: 480px) {
+  .p-form button[type="submit"] {
+    margin: 0.7em 0 0;
+  }
+  .p-form input:not([type]),
+  .p-form input[type="text"],
+  .p-form input[type="password"],
+  .p-form input[type="email"],
+  .p-form input[type="url"],
+  .p-form input[type="date"],
+  .p-form input[type="month"],
+  .p-form input[type="time"],
+  .p-form input[type="datetime"],
+  .p-form input[type="datetime-local"],
+  .p-form input[type="week"],
+  .p-form input[type="number"],
+  .p-form input[type="search"],
+  .p-form input[type="tel"],
+  .p-form input[type="color"],
+  .p-form label {
+    margin-bottom: 0.3em;
+    display: block;
+  }
+  .pure-group input:not([type]),
+  .pure-group input[type="text"],
+  .pure-group input[type="password"],
+  .pure-group input[type="email"],
+  .pure-group input[type="url"],
+  .pure-group input[type="date"],
+  .pure-group input[type="month"],
+  .pure-group input[type="time"],
+  .pure-group input[type="datetime"],
+  .pure-group input[type="datetime-local"],
+  .pure-group input[type="week"],
+  .pure-group input[type="number"],
+  .pure-group input[type="search"],
+  .pure-group input[type="tel"],
+  .pure-group input[type="color"] {
+    margin-bottom: 0;
+  }
+  .p-form-aligned .pure-control-group label {
+    margin-bottom: 0.3em;
+    text-align: left;
+    display: block;
+    width: 100%;
+  }
+  .p-form-aligned .pure-controls {
+    margin: 1.5em 0 0 0;
+  }
+  /* NOTE: pure-help-inline is deprecated. Use .p-form-message-inline instead. */
+  .p-form .pure-help-inline,
+  .p-form-message-inline,
+  .p-form-message {
+    display: block;
+    font-size: 0.75em;
+    /* Increased bottom padding to make it group with its related input element. */
+    padding: 0.2em 0 0.8em;
+  }
+}
+
+/* $button
+
+	##              #   #
+	 #              #   #
+	 #              #   #
+	 ####  ##  ##  ### ###  ####  ######
+	 #   #  #   #   #   #  ##  ##  #   #
+	 #   #  #   #   #   #  #    #  #   #
+	 #   #  #   #   #   #  ##  ##  #   #
+	 ####   ######  ##  ##  ####  ### ###
+
+	*/
+.btn-box {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 3px;
+  transition: all .3s;
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    height: 44px;
+    line-height: 44px;
+    font-size: 17px;
+  }
+}
+
+.btn-reset, .btn-register {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.btn-reset:hover, .btn-reset:active, .btn-register:hover, .btn-register:active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-submit {
+  background-color: #0c9;
+}
+
+.btn-submit:hover, .btn-submit:active {
+  background-color: #00664d;
+}
+
+.btn-fluid {
+  display: block;
+}
+
+/* $generic class
+
+	 ######   ######## ##    ## ######## ########  ####  ######
+	##    ##  ##       ###   ## ##       ##     ##  ##  ##    ##
+	##        ##       ####  ## ##       ##     ##  ##  ##
+	##   #### ######   ## ## ## ######   ########   ##  ##
+	##    ##  ##       ##  #### ##       ##   ##    ##  ##
+	##    ##  ##       ##   ### ##       ##    ##   ##  ##    ##
+	 ######   ######## ##    ## ######## ##     ## ####  ######
+
+	 ######  ##          ###     ######   ######
+	##    ## ##         ## ##   ##    ## ##    ##
+	##       ##        ##   ##  ##       ##
+	##       ##       ##     ##  ######   ######
+	##       ##       #########       ##       ##
+	##    ## ##       ##     ## ##    ## ##    ##
+	 ######  ######## ##     ##  ######   ######
+
+	*/
+.clearfix::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.text-hide {
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.m0-auto {
+  margin: 0 auto;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-highlight {
+  color: #0c9;
+}
+
+.text-accent {
+  color: #e12d80;
+}
+
+.logo {
+  float: left;
+  margin-left: 18px;
+  max-width: 170px;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+/* $layout
+
+	##          ###    ##    ##  #######  ##     ## ########
+	##         ## ##    ##  ##  ##     ## ##     ##    ##
+	##        ##   ##    ####   ##     ## ##     ##    ##
+	##       ##     ##    ##    ##     ## ##     ##    ##
+	##       #########    ##    ##     ## ##     ##    ##
+	##       ##     ##    ##    ##     ## ##     ##    ##
+	######## ##     ##    ##     #######   #######     ##
+
+	*/
+.wrap {
+  max-width: 1000px;
+}
+
+/* $page-head
+	                                ##                     ##
+	                                 #                      #
+	                                 #                      #
+	#####  ####   ####  ###          #####   ###  ####   ####
+	 #   #    #  #  #  #   #         #   #  #   #    #  #   #
+	 #   # ####  #  #  ##### ######  #   #  ##### ####  #   #
+	 #   # #  #   ##   #             #   #  #     #  #  #   #
+	 ####  ##### #####  ####        ### ###  #### #####  #####
+	 #           #   #
+	###          ####
+
+	*/
+.page-head {
+  padding-bottom: 20px;
+}
+
+.media-bar {
+  background-color: #f3f3f2;
+  padding: 0 12px;
+}
+
+.media-bar__item {
+  float: right;
+}
+
+.media-bar__link {
+  line-height: 28px;
+}
+
+.media-bar__link.facebook {
+  color: #3b5998;
+}
+
+.media-bar__link.facebook > .media-img {
+  margin-right: 2px;
+}
+
+.media-bar__link.twitter {
+  color: #1da1f2;
+}
+
+.media-bar__link.twitter:before {
+  content: '│';
+  font-size: 12px;
+  color: lightgray;
+  padding-left: 6px;
+}
+
+.media-bar__img {
+  margin-right: 2px;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+@media screen and (max-width: 568px) {
+  .brading-bar {
+    position: relative;
+  }
+  .brading-bar nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+.brading__logo {
+  background: url("../images/hexschool_logo_green.svg") no-repeat 50% 50%;
+}
+
+.main-nav {
+  position: relative;
+  float: right;
+}
+
+@media screen and (max-width: 568px) {
+  .main-nav {
+    float: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .95s;
+    z-index: 100;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .show .main-nav {
+    max-height: 294px;
+    transition: max-height 1s;
+  }
+}
+
+.nav-hover-bar {
+  content: '';
+  position: absolute;
+  top: calc(100% - 3px);
+  border-top: 3px solid #0c9;
+}
+
+@media screen and (max-width: 568px) {
+  .nav-hover-bar {
+    display: none;
+  }
+}
+
+.main-nav__item {
+  float: left;
+  position: relative;
+}
+
+.main-nav__item.is-active::after {
+  content: '';
+  position: absolute;
+  top: calc(100% - 3px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 80%;
+  border-top: 3px solid #0c9;
+}
+
+@media screen and (max-width: 568px) {
+  .main-nav__item {
+    float: none;
+  }
+  .main-nav__item.is-active::after, .main-nav__item:hover::after {
+    display: none;
+  }
+}
+
+.main-nav__link {
+  padding: 0 20px;
+  line-height: 48px;
+  color: #0c9;
+}
+
+@media screen and (max-width: 568px) {
+  .main-nav__link {
+    width: 100%;
+    background-color: #fff;
+  }
+  .main-nav__link:hover, .main-nav__link:active {
+    color: #fff;
+    background-color: #0c9;
+  }
+}
+
+.main-nav__sub-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s;
+  z-index: 100;
+}
+
+@media screen and (max-width: 568px) {
+  .main-nav__sub-nav {
+    position: static;
+  }
+}
+
+.nav__item--show-sub .main-nav__sub-nav {
+  max-height: 150px;
+}
+
+.sub-nav__link {
+  padding: 0 20px;
+  width: 150px;
+  line-height: 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  transition: all .3s;
+}
+
+.sub-nav__link:hover {
+  color: #0c9;
+  font-weight: 700;
+}
+
+.sub-nav__link :nth-child(1) {
+  padding-top: 10px;
+}
+
+.sub-nav__link :nth-child(3) {
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 568px) {
+  .sub-nav__link {
+    width: 100%;
+    text-indent: 30px;
+  }
+}
+
+.m-nav-btn {
+  display: none;
+  float: right;
+  margin-right: 13px;
+  line-height: 48px;
+  font-size: 25px;
+  color: #0c9;
+}
+
+@media screen and (max-width: 568px) {
+  .m-nav-btn {
+    display: block;
+  }
+}
+
+/* $page-foot
+	                                 ###                #
+	                                 # #                #
+	                                 #                  #
+	#####  ####   ####  ###         ###   ####   ####  ###
+	 #   #    #  #  #  #   #         #   ##  ## ##  ##  #
+	 #   # ####  #  #  ##### ######  #   #    # #    #  #
+	 #   # #  #   ##   #             #   ##  ## ##  ##  #
+	 ####  ##### #####  ####        ###   ####   ####   ##
+	 #           #   #
+	###          ####
+
+	*/
+.page-foot {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.foot__logo {
+  background: url("../images/hexschool_logo_gray.svg") no-repeat 50% 50%;
+}
+
+@media screen and (max-width: 568px) {
+  .foot__logo {
+    float: none;
+    margin-bottom: 10px;
+  }
+}
+
+.company-info {
+  float: right;
+  margin-right: 18px;
+}
+
+@media screen and (max-width: 568px) {
+  .company-info {
+    float: none;
+    margin-left: 18px;
+  }
+}
+
+.go-top {
+  padding-left: 6px;
+  padding-top: 7px;
+  position: fixed;
+  bottom: -38px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50%;
+  background-color: #009872;
+  letter-spacing: 2px;
+  transition: all .3s;
+}
+
+.go-top:hover {
+  background-color: #0c9;
+}
+
+/* index style
+
+  #### ##    ## ########  ######## ##     ##
+   ##  ###   ## ##     ## ##        ##   ##
+   ##  ####  ## ##     ## ##         ## ##
+   ##  ## ## ## ##     ## ######      ###
+   ##  ##  #### ##     ## ##         ## ##
+   ##  ##   ### ##     ## ##        ##   ##
+  #### ##    ## ########  ######## ##     ##
+
+   ######  ######## ##    ## ##       ########
+  ##    ##    ##     ##  ##  ##       ##
+  ##          ##      ####   ##       ##
+   ######     ##       ##    ##       ######
+        ##    ##       ##    ##       ##
+  ##    ##    ##       ##    ##       ##
+   ######     ##       ##    ######## ########
+
+  */
+.featured-list {
+  padding-bottom: 80px;
+}
+
+.featured-list--card {
+  float: left;
+  width: 31.33333333%;
+  margin: 0 1%;
+  padding: 1em 1em;
+  box-shadow: 0 3.5px 2px #ddd;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .featured-list--card {
+    width: 98%;
+  }
+}
+
+.featured-list__head {
+  text-align: center;
+}
+
+.featured-list__head > .title {
+  margin-top: .5em;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .featured-list--m0-auto {
+    max-width: 170px;
+    margin: 0 auto;
+  }
+}
+
+.jq-features::before {
+  content: '．';
+}
+
+.compartion-chart {
+  margin-bottom: 60px;
+  overflow-x: auto;
+}
+
+.compartion--table {
+  width: 85%;
+  min-width: 560px;
+}
+
+.compartion--table .title {
+  margin-bottom: 20px;
+}
+
+.compartion--table .compartion__head {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.compartion--table th:nth-child(1) {
+  width: 25%;
+}
+
+.compartion--table th:nth-child(2),
+.compartion--table th:nth-child(3) {
+  width: 30%;
+}
+
+.compartion--table th:nth-child(4) {
+  width: 15%;
+}
+
+.compartion--table th, .compartion--table td {
+  padding: 5px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-indent: 20px;
+  text-align: left;
+}
+
+.contact {
+  padding-bottom: 40px;
+  background: linear-gradient(#00644b, #009872);
+}
+
+.contact > .title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.contact__textarea, .contact__input-group {
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.contact__textarea {
+  float: left;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__textarea {
+    width: 100%;
+  }
+}
+
+.contact__textarea textarea {
+  width: 100%;
+  height: 250px;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__textarea textarea {
+    height: 200px;
+    font-size: 17px;
+  }
+}
+
+.contact__input-group {
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__input-group {
+    width: 100%;
+  }
+}
+
+.contact__input-group label {
+  margin-bottom: 0;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__input-group label {
+    margin-top: 12px;
+    font-size: 17px;
+  }
+}
+
+.contact__input-group input[type='text'],
+.contact__input-group input[type='tel'],
+.contact__input-group input[type='email'] {
+  width: 100%;
+  height: 32px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__input-group input[type='text'],
+  .contact__input-group input[type='tel'],
+  .contact__input-group input[type='email'] {
+    font-size: 17px;
+    height: 45px;
+  }
+}
+
+.contact__input-group .btn-box {
+  float: right;
+  margin-top: 25px;
+}
+
+.contact__input-group .btn-submit {
+  width: 70px;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__input-group .btn-submit {
+    width: 90px;
+  }
+}

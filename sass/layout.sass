@@ -1,0 +1,284 @@
+
+
+
+@import 'mixin'
+
+/* $generic class
+
+	 ######   ######## ##    ## ######## ########  ####  ######
+	##    ##  ##       ###   ## ##       ##     ##  ##  ##    ##
+	##        ##       ####  ## ##       ##     ##  ##  ##
+	##   #### ######   ## ## ## ######   ########   ##  ##
+	##    ##  ##       ##  #### ##       ##   ##    ##  ##
+	##    ##  ##       ##   ### ##       ##    ##   ##  ##    ##
+	 ######   ######## ##    ## ######## ##     ## ####  ######
+
+	 ######  ##          ###     ######   ######
+	##    ## ##         ## ##   ##    ## ##    ##
+	##       ##        ##   ##  ##       ##
+	##       ##       ##     ##  ######   ######
+	##       ##       #########       ##       ##
+	##    ## ##       ##     ## ##    ## ##    ##
+	 ######  ######## ##     ##  ######   ######
+
+	*/
+
+
+
+.clearfix::after
+	display: table
+	content: ''
+	clear: both
+
+.text-hide
+	text-indent: 101%
+	overflow: hidden
+	white-space: nowrap
+
+.m0-auto
+	margin: 0 auto
+
+.text-justify
+  text-align: justify
+
+.text-highlight
+	color: $mainColor
+
+.text-accent
+	color: $accentColor
+
+.logo
+    float: left
+    margin-left: 18px
+    max-width: 170px
+
+.show
+	display: block
+
+.hide
+	display: none
+
+/* $layout
+
+	##          ###    ##    ##  #######  ##     ## ########
+	##         ## ##    ##  ##  ##     ## ##     ##    ##
+	##        ##   ##    ####   ##     ## ##     ##    ##
+	##       ##     ##    ##    ##     ## ##     ##    ##
+	##       #########    ##    ##     ## ##     ##    ##
+	##       ##     ##    ##    ##     ## ##     ##    ##
+	######## ##     ##    ##     #######   #######     ##
+
+	*/
+
+
+.wrap
+	max-width: 1000px
+
+
+/* $page-head
+	                                ##                     ##
+	                                 #                      #
+	                                 #                      #
+	#####  ####   ####  ###          #####   ###  ####   ####
+	 #   #    #  #  #  #   #         #   #  #   #    #  #   #
+	 #   # ####  #  #  ##### ######  #   #  ##### ####  #   #
+	 #   # #  #   ##   #             #   #  #     #  #  #   #
+	 ####  ##### #####  ####        ### ###  #### #####  #####
+	 #           #   #
+	###          ####
+
+	*/
+
+.page-head
+	padding-bottom: 20px
+
+
+
+.media-bar
+	background-color: #f3f3f2
+	padding: 0 12px
+
+.media-bar__item
+    float: right
+
+.media-bar__link
+	line-height: 28px
+	&.facebook
+		color: #3b5998
+		>.media-img
+			margin-right: 2px
+	&.twitter
+		color: #1da1f2
+	&.twitter:before
+		content: '│'
+		font-size: 12px
+		color: lightgray
+		padding-left: 6px
+
+.media-bar__img
+	margin-right: 2px
+	display: inline-block
+	vertical-align: text-top
+
+
+.brading-bar
+	@include iphoneDown
+		position: relative
+		nav
+			position: absolute
+			top: 100%
+			left: 0
+			right: 0
+
+.brading__logo
+	background: url('../images/hexschool_logo_green.svg') no-repeat 50% 50%
+
+
+
+.main-nav
+	position: relative
+	float: right
+	@include iphoneDown
+		float: none
+		max-height: 0
+		overflow: hidden
+		transition: max-height .95s
+		z-index: 100
+
+.show .main-nav
+	@include iphoneDown
+		max-height: 294px
+		transition: max-height 1s
+
+.nav-hover-bar
+	content: ''
+	position: absolute
+	top: calc(100% - 3px)
+	border-top: 3px solid #0c9
+	@include iphoneDown
+		display:none
+
+.main-nav__item
+	float: left
+	position: relative
+	&.is-active::after
+		content: ''
+		position: absolute
+		top: calc(100% - 3px)
+		left: 50%
+		transform: translateX(-50%)
+		width: 80%
+		border-top: 3px solid #0c9
+	@include iphoneDown
+		float: none
+		&.is-active::after,
+		&:hover::after
+			display: none
+
+.main-nav__link
+	padding: 0 20px
+	line-height: 48px
+	color: $mainColor
+	@include iphoneDown
+		width: 100%
+		background-color: #fff
+		&:hover, &:active
+			color: #fff
+			background-color: $mainColor
+
+.main-nav__sub-nav
+	position: absolute
+	top: 100%
+	left: 0
+	max-height: 0
+	overflow: hidden
+	transition: max-height .5s
+	z-index: 100
+	@include iphoneDown
+		position: static
+
+.nav__item--show-sub .main-nav__sub-nav
+	max-height: 150px
+
+.sub-nav__link
+	padding: 0 20px
+	width: 150px
+	line-height: 50px
+	background-color: rgba(0, 0, 0, .8)
+	color: #fff
+	transition: all .3s
+	&:hover
+		color: $mainColor
+		font-weight: 700
+	:nth-child(1)
+		padding-top: 10px
+	:nth-child(3)
+		padding-bottom: 10px
+	@include iphoneDown
+		width: 100%
+		text-indent: 30px
+
+.m-nav-btn
+	display: none
+	float: right
+	margin-right: 13px
+	line-height: 48px
+	font-size: 25px
+	color: $mainColor
+	@include iphoneDown
+		display: block
+
+
+/* $page-foot
+	                                 ###                #
+	                                 # #                #
+	                                 #                  #
+	#####  ####   ####  ###         ###   ####   ####  ###
+	 #   #    #  #  #  #   #         #   ##  ## ##  ##  #
+	 #   # ####  #  #  ##### ######  #   #    # #    #  #
+	 #   # #  #   ##   #             #   ##  ## ##  ##  #
+	 ####  ##### #####  ####        ###   ####   ####   ##
+	 #           #   #
+	###          ####
+
+	*/
+
+.page-foot
+	margin-top: 30px
+	margin-bottom: 30px
+
+
+
+.foot__logo
+	background: url('../images/hexschool_logo_gray.svg') no-repeat 50% 50%
+	@include iphoneDown
+		float: none
+		margin-bottom: 10px;
+
+.company-info
+	float: right
+	margin-right: 18px
+	@include iphoneDown
+		float: none
+		margin-left: 18px
+
+
+.go-top
+	padding-left: 6px
+	padding-top: 7px
+	position: fixed
+	bottom: -38px
+	left: 50%
+	transform: translateX(-50%)
+	width: 70px
+	height: 70px
+	text-align: center
+	color: #fff
+	font-size: 18px
+	font-weight: 700
+	border-radius: 50%
+	background-color: #009872
+	letter-spacing: 2px
+	transition: all .3s
+	&:hover
+		background-color: $mainColor

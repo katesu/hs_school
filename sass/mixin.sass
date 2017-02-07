@@ -1,0 +1,15 @@
+$mainColor: #0c9
+
+$accentColor: #e12d80
+
+@mixin desktopDown
+	@media screen and (max-width: 1000px)
+		@content
+
+@mixin ipadDown
+	@media screen and (max-width: 768px)
+		@content
+
+@mixin iphoneDown
+	@media screen and (max-width: 568px)
+		@content

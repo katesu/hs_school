@@ -1,0 +1,135 @@
+
+/* index style
+
+  #### ##    ## ########  ######## ##     ##
+   ##  ###   ## ##     ## ##        ##   ##
+   ##  ####  ## ##     ## ##         ## ##
+   ##  ## ## ## ##     ## ######      ###
+   ##  ##  #### ##     ## ##         ## ##
+   ##  ##   ### ##     ## ##        ##   ##
+  #### ##    ## ########  ######## ##     ##
+
+   ######  ######## ##    ## ##       ########
+  ##    ##    ##     ##  ##  ##       ##
+  ##          ##      ####   ##       ##
+   ######     ##       ##    ##       ######
+        ##    ##       ##    ##       ##
+  ##    ##    ##       ##    ##       ##
+   ######     ##       ##    ######## ########
+
+  */
+.featured-list
+  padding-bottom:  80px
+
+.featured-list--card
+  float: left
+  width: 31.33333333%
+  margin: 0 1%
+  padding: 1em 1em
+  box-shadow: 0 3.5px 2px #ddd
+  border-radius: 3px
+  @include ipadDown
+    width: 98%
+
+.featured-list__head
+  text-align: center
+  >.title
+    margin-top: .5em;
+    line-height: 1.5;
+
+.featured-list--m0-auto
+  @include ipadDown
+    max-width: 170px
+    margin: 0 auto
+
+.jq-features::before
+  content: '．'
+
+
+
+
+.compartion-chart
+  margin-bottom: 60px
+  overflow-x: auto
+.compartion--table
+  width: 85%
+  min-width: 560px
+  .title
+    margin-bottom: 20px
+  .compartion__head
+    background-color: #f7f7f7
+    font-weight: 600
+  th:nth-child(1)
+    width: 25%
+  th:nth-child(2),
+  th:nth-child(3)
+    width: 30%
+  th:nth-child(4)
+    width: 15%
+  th, td
+    padding: 5px 0
+    border-top: 1px solid #ddd
+    border-bottom: 1px solid #ddd
+    text-indent: 20px
+    text-align: left
+
+
+
+
+.contact
+  padding-bottom: 40px
+  background: linear-gradient(#00644b, #009872)
+  >.title
+    padding-top: 20px
+    padding-bottom: 20px
+    color: #fff
+    text-align: center
+
+.contact__textarea, .contact__input-group
+  width: 50%
+  padding-left: 15px
+  padding-right: 15px
+
+.contact__textarea
+  float: left
+  @include ipadDown
+    width: 100%
+  textarea
+    width: 100%
+    height: 250px
+    font-size: 15px
+    @include ipadDown
+      height: 200px
+      font-size: 17px
+
+.contact__input-group
+  float: right
+  @include ipadDown
+    width: 100%
+  label
+    margin-bottom: 0
+    color: #fff
+    @include ipadDown
+      margin-top: 12px
+      font-size: 17px
+  input[type='text'],
+  input[type='tel'],
+  input[type='email']
+    width: 100%
+    height: 32px
+    margin-top: 0
+    margin-bottom: 10px
+    font-size: 15px
+    @include ipadDown
+      font-size: 17px
+      height: 45px
+
+  .btn-box
+    float: right
+    margin-top: 25px
+
+  .btn-submit
+    width: 70px
+    color: #fff
+    @include ipadDown
+      width: 90px

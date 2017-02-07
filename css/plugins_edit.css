@@ -1,0 +1,11 @@
+/*----------------------*	nivo slider
+ \*---------------------*/
+@media screen and (max-width: 568px) {
+  .slider-wrapper {
+    display: none;
+  }
+}
+
+.theme-default .nivoSlider {
+  box-shadow: none;
+}
